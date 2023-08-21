@@ -1,4 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Pacifico&display=swap');
+
+body{
+    opacity:100%;
+
+}
+
 .check{
     border: 1px solid black;
 }
@@ -9,6 +15,7 @@
 }
 .text-color {
     color: white;
+    
 }
 
 .SearchBtn {
@@ -114,4 +121,91 @@
 .ayan{
     width: 35px !important;
     height: 35px !important;
+}
+.ProfileImagTag{
+    border: 2px solid black;
+    cursor: pointer;
+}
+#UserName{
+    cursor: pointer;
+    font-weight: 500;
+}
+#UserName:hover{
+    border-bottom: 1px solid black;
+
+    
+}
+
+.imgdiv:hover{
+
+    opacity: 30%;
+}
+.example {
+    cursor: pointer;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+    width: 200px;
+    text-align: center;
+    border-radius: 100%;
+  }
+  .example .fadedbox {
+    background-color: #666666;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #fff;
+    -webkit-transition: all 300ms ease-out;
+    -moz-transition: all 300ms ease-out;
+    -o-transition: all 300ms ease-out;
+    -ms-transition: all 300ms ease-out;
+    transition: all 300ms ease-out;
+    opacity: 0;
+    width: 200px;
+    height: 200px;
+    padding: 100px 20px;
+  }
+  .example:hover .fadedbox {
+    opacity: 0.8;
+  }
+  .example .text {
+   font-family: 'Pacifico', cursive;    
+    -webkit-transition: all 300ms ease-out;
+    -moz-transition: all 300ms ease-out;
+    -o-transition: all 300ms ease-out;
+    -ms-transition: all 300ms ease-out;
+    transition: all 300ms ease-out;
+    transform: translateY(30px);
+    -webkit-transform: translateY(30px);
+  }
+  .example .title {
+    font-size: 2.5em;
+    text-transform: uppercase;
+    opacity: 0;
+    transition-delay: 0.2s;
+    transition-duration: 0.3s;
+  }
+  .example:hover .title,
+  .example:focus .title {
+    opacity: 1;
+    transform: translateY(0px);
+    -webkit-transform: translateY(0px);
+  }
+  .LoadingDiv{
+    height: 100px;
+    position: absolute; 
+  left: 0; 
+  right: 0; 
+  top: 0;
+  margin-left: auto; 
+  margin-right: auto;
+  margin-top: 40vh;
+  width: 100px;
+  display: none;
+  /* opacity: ; */
+  
+  }
+
+.lowOpacity{
+    opacity: 30%;
 }

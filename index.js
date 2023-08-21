@@ -39,9 +39,9 @@ window.addEventListener("load", async function () {
             const BlogData = doc.data()
             if (BlogData.UID == userData.UID) {
                 const card = `<div id="" class="BlogDivInput p-3 mt-2">
-            <div class="d-flex check">
+            <div class="d-flex">
             <div class="me-3">
-                <img id="ProfilImage" src="${BlogData.Image}" width="100px" height="100px" alt="">
+                <img id="ProfilImage" class="ProfileImagTag" src="${BlogData.Image}" width="100px" height="100px" alt="">
             </div>
             <div class="">
                 <div><h3 id="BlogTitle">${BlogData.Title}</h3></div>
@@ -50,7 +50,7 @@ window.addEventListener("load", async function () {
                 </div>
             </div>
           </div>
-          <div>
+          <div class="mt-3">
             <p>${BlogData.Desc}</p>
           </div>
           <div>
@@ -83,18 +83,18 @@ window.addEventListener("load", async function () {
             const BlogData = doc.data()
             // if (BlogData.UID == userData.UID) {
                     const card = `<div id="" class="BlogDivInput p-3 mt-2"><span id="" ></span>
-                <div class="d-flex check">
+                <div class="d-flex">
                 <div class="me-3">
-                    <img id="ProfilImage" src="${BlogData.Image}" onclick="ProfileShow('${BlogData.UID}')" width="100px" height="100px" alt="">
+                    <img id="ProfilImage" class="ProfileImagTag" src="${BlogData.Image}" onclick="ProfileShow('${BlogData.UID}')" width="100px" height="100px" alt="">
                 </div>
                 <div class="">
                     <div><h3 id="BlogTitle">${BlogData.Title}</h3></div>
                     <div>
-                        <span id="UserName">${BlogData.FullName}</span> - <span id="BlogDate">${BlogData.timestamp.toDate()}</span>
+                        <span id="UserName" onclick="ProfileShow('${BlogData.UID}')">${BlogData.FullName}</span> - <span id="BlogDate">${BlogData.timestamp.toDate()}</span>
                     </div>
                 </div>
             </div>
-            <div>
+            <div class="mt-3">
                 <p>${BlogData.Desc}</p>
             </div>
             <div>
@@ -143,11 +143,20 @@ function ProfilPage() {
 }
 
 async function BlogPost() {
+    var BlogPubBTN = document.getElementById("BlogPubBTN")
     var title = document.getElementById("title")
     var desc = document.getElementById("desc")
     const UserData = JSON.parse(localStorage.getItem("user"))
     console.log(UserData)
-
+    if(!title|| !desc){
+        alert("Please Enter Title & Description")
+        return
+    }
+    BlogPubBTN.innerHTML = `<div class="ayan">
+    <div class="spinner-border text-light ayan" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+</div>`
     const PostObj = {
         Title: title.value,
         Desc: desc.value,

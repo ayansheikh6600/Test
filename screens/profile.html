@@ -11,32 +11,52 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg Theme">
-        <div class="container-fluid">
+    <div id="lowOpacity">
+        <nav class="navbar navbar-expand-lg Theme">
+            <div class="container-fluid">
 
-            <a class="navbar-brand text-color fs-3 fw-bold" href="../index.html">Personal Blogging App</a>
+                <a class="navbar-brand text-color fs-3 fw-bold" href="../index.html">Personal Blogging App</a>
 
-            <button class="btn SearchBtn" onclick="logout()">LOGOUT</button>
+                <button class="btn SearchBtn" onclick="logout()">LOGOUT</button>
 
-        </div>
-    </nav>
-    <div class="container">
-        <div id="ChangingContentDiv" class="p-3">
-            <div class="ProfileInformation">
-                <h1>Profile Information</h1>
-                <hr>
-                <div class="CustomerDiv">
-                    <img id="ProfileImage" class="" src="" alt=""><br>
-                    <label class="fw-bold mt-2" for="">FirstName:</label>
-                    <input id="FName" class="form-control" type="text" disabled>
-                    <label class="fw-bold mt-2" for="">LastName:</label>
-                    <input id="LName" class="form-control" type="text" disabled>
-                    <label class="fw-bold mt-2" for="">Email:</label>
-                    <input id="UserEmail" class="form-control" type="text" disabled>
+            </div>
+        </nav>
+        
+
+        <div class="container">
+            <div id="ChangingContentDiv" class="p-3">
+                <div class="ProfileInformation">
+                    <h1>Profile Information</h1>
+                    <hr>
+                    <div class="CustomerDiv">
+                        <div class="example m-auto" onclick="SelectImage(this)">
+                            <img id="ProfileImage"
+                                src="/uploads/media/default/0001/01/4982c4f43023330a662b9baed5a407e391ae6161.jpeg"
+                                width="400" height="300" alt="house" />
+                            <div class="fadedbox">
+                                <div class="title text"> Edit </div>
+                            </div>
+                        </div>
+                        <!-- <img id="ProfileImage" onclick="SelectImage(this)" class="imgdiv" src="" alt=""> -->
+                        <br>
+                        <label class="fw-bold mt-2" for="">FirstName:</label>
+                        <input id="FName" class="form-control" type="text" disabled>
+                        <label class="fw-bold mt-2" for="">LastName:</label>
+                        <input id="LName" class="form-control" type="text" disabled>
+                        <label class="fw-bold mt-2" for="">Email:</label>
+                        <input id="UserEmail" class="form-control" type="text" onchange="" disabled>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    <div class="LoadingDiv">
+        <div class="spinner-grow text-dark" role="status" style="width: 100px; height: 100px;">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+
+
 
 </body>
 

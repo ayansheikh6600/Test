@@ -116,7 +116,8 @@ function Signup() {
                                                 LastName,
                                                 email,
                                                 UID: user.uid,
-                                                ProfileImageURL : downloadURL
+                                                ProfileImageURL : downloadURL,
+                                                imageRef : ProfileImage.name
                                             }
                                             await setDoc(doc(db, "users", user.uid), userObj);
                                             localStorage.setItem("user", JSON.stringify(userObj))

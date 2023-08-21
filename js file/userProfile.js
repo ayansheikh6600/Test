@@ -37,9 +37,9 @@ window.addEventListener("load", async function () {
         const BlogData = doc.data()
         if (BlogData.UID == userData) {
             const card = `<div id="" class="BlogDivInput p-3 mt-2">
-            <div class="d-flex check">
+            <div class="d-flex">
             <div class="me-3">
-                <img id="ProfilImage" src="${BlogData.Image}" width="100px" height="100px" alt="">
+                <img id="ProfilImage" class="ProfileImagTag" src="${BlogData.Image}" width="100px" height="100px" alt="">
             </div>
             <div class="">
                 <div><h3 id="BlogTitle">${BlogData.Title}</h3></div>
@@ -48,7 +48,7 @@ window.addEventListener("load", async function () {
                 </div>
             </div>
           </div>
-          <div>
+          <div class="mt-3">
             <p>${BlogData.Desc}</p>
           </div>
           </div>`
