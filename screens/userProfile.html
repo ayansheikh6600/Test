@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg Theme">
+        <div class="container-fluid">
+
+            <a class="navbar-brand text-color fs-3 fw-bold" href="../index.html">Personal Blogging App</a>
+
+            <div class="LogoutDiv">
+                <button class="btn SearchBtn"><a class="text-decoration-none text-white" href="./login.html">LOGIN</a></button>
+            </div>
+
+
+        </div>
+    </nav>
+<div class="container">
+    <div class="mt-3">
+        <h3 class="text-dark"><a class="text-dark text-decoration-none" href="../index.html">
+            < Back to all blogs
+        </a>
+        </h3>
+    </div>
+    <div>
+        All from <span class="fw-bold" id="userName"></span>
+    </div>
+    <div class="row">
+        <div id="BlogDiv" class="col-lg-8">
+            <!-- <div id="" class="BlogDivInput p-3 mt-2"><span id="" ></span>
+                <div class="d-flex check">
+                <div class="me-3">
+                    <img id="ProfilImage" src="" onclick="ProfileShow('${BlogData.UID}')" width="100px" height="100px" alt="">
+                </div>
+                <div class="">
+                    <div><h3 id="BlogTitle">${BlogData.Title}</h3></div>
+                    <div>
+                        <span id="UserName">${BlogData.FullName}</span> - <span id="BlogDate">${BlogData.timestamp.toDate()}</span>
+                    </div>
+                </div>
+              </div>
+              <div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint dignissimos impedit quaerat, ducimus commodi assumenda necessitatibus maiores doloribus cum fugit rerum vel nulla dolore aperiam! Totam amet reiciendis minima in.</p>
+              </div>
+              <div>
+    
+              </div>
+              </div> -->
+        </div>
+        <div id="UserDiv" class="col-lg-4">
+
+            <div id="ChangingContentDiv" class="p-3">
+                <div class="ProfileInformation">
+                    <h1>Profile Information</h1>
+                    <hr>
+                    <div class="CustomerDiv">
+                        <img id="ProfileImage" class="" src="" alt=""><br>
+                        <label class="fw-bold mt-2" for="">FirstName:</label>
+                        <input id="FName" class="form-control" type="text" disabled>
+                        <label class="fw-bold mt-2" for="">LastName:</label>
+                        <input id="LName" class="form-control" type="text" disabled>
+                        <label class="fw-bold mt-2" for="">Email:</label>
+                        <input id="UserEmail" class="form-control" type="text" disabled>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+    
+</body>
+
+<script type="module" src="../js file/userProfile.js"></script>
+</html>

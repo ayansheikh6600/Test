@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Pacifico&display=swap');
+.check{
+    border: 1px solid black;
+}
+
+.Theme {
+    background-color: black;
+    /* color: white; */
+}
+.text-color {
+    color: white;
+}
+
+.SearchBtn {
+    color: white;
+    outline: 2px solid white;
+}
+
+.SearchBtn:hover {
+    color: rgb(231, 231, 231);
+}
+
+.nav-link:hover {
+    color: white;
+    border-bottom: 1px solid white;
+
+}
+
+.navbar-brand:hover {
+    color: rgb(211, 211, 211);
+}
+.SignupMenu{
+    width: 350px;
+    box-shadow: 2px 2px 20px 2px black;
+    border-radius: 10px;
+    margin: 20px auto;
+}
+.SignupMenu div {
+    width: 330px;
+    margin: 0px auto;
+}
+.main{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    justify-content: center;
+}
+.LogoutDiv{
+    display: flex;
+    flex-direction: row;
+    /* border: 2px solid white; */
+    justify-content: center;
+    align-items: center;
+}
+.LogoutDiv p{
+    align-items: center;
+    /* border: 1px solid white; */
+    margin: auto 0 ;
+    margin-right: 10px;
+
+}
+.btn-dark{
+    width: 130px;
+}
+.BlogDivInput{
+    border-radius: 5px;
+    box-shadow: 1px 1px 16px 1px rgb(105, 105, 105);
+}
+#ProfilImage{
+    border-radius: 10px;
+}
+
+.ProfileInformation h1{
+    text-align: center;
+    font-family: 'Pacifico', cursive;
+}
+.CustomerDiv{
+    display: flex;
+    flex-direction: column;
+}
+#ProfileImage {
+    width: 200px;
+    height: 200px;
+    border-radius: 200px;
+    margin: 0px auto;
+    border: 3px solid black;
+}
+#ChangingContentDiv{
+    box-shadow: 2px 2px 16px 2px grey;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+.done{
+    display: block !important;
+    width: 100% !important;
+    padding: 0.375rem 0.75rem !important;
+    font-size: 1rem !important;
+    font-weight: 400 !important;
+    line-height: 1.5 !important;
+    color: var(--bs-body-color) !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+    background-color: var(--bs-body-bg) !important;
+    background-clip: padding-box !important;
+    border: var(--bs-border-width) solid var(--bs-border-color) !important;
+    border-radius: var(--bs-border-radius) !important;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out !important;
+    height: 50px !important;
+}
+
+.ayan{
+    width: 35px !important;
+    height: 35px !important;
+}

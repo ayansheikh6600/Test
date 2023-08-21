@@ -1,90 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style.css">
     <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <link rel="stylesheet" href="/CSSFile/login.css">
 </head>
+
 <body>
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <nav class="navbar navbar-expand-lg Theme">
+        <div class="container-fluid">
+
+            <a class="navbar-brand text-color fs-3 fw-bold" href="../index.html">Personal Blogging App</a>
+
+            <button class="btn SearchBtn" type="submit"><a href="./signup.html" class="nav-link">Signup</a></button>
+
         </div>
-        <div class="modal-body">
-          ...
+    </nav>
+    <div class="SignupMenu">
+        <div class="mt-5">
+            <h2 class="text-center text-dark">LOGIN</h2>
+            <hr>
+            <form onsubmit="return login(), false">
+            <label for="">EMAIL:</label>
+            <input id="email" type="email" required placeholder="Enter Email" class="form-control"><br>
+            <label for="">PASSWORD:</label>
+            <input minlength="8" id="password" type="password" placeholder="Enter Password" class="form-control"><br>
+            <button id="loginBtn" class="btn btn-dark mb-3" type="submit">LOGIN </button>
+            </form>
+            
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
+
     </div>
-  </div>
-
-
-  
-
-
-
-
-    <div class="wrapper">
-        <div class="title-text">
-          <div class="title login">Login Form</div>
-          <div class="title signup">Signup Form</div>
-        </div>
-        <div class="form-container">
-          <div class="slide-controls">
-            <input type="radio" name="slide" id="login" checked>
-            <input type="radio" name="slide" id="signup">
-            <label for="login" class="slide login">Login</label>
-            <label for="signup" class="slide signup">Signup</label>
-            <div class="slider-tab"></div>
-          </div>
-          <div class="form-inner">
-            <form onsubmit="return false" class="login">
-              <div class="field">
-                <input type="text"  id="Email" placeholder="Email Address" >
-              </div>
-              <div class="field">
-                <input type="password" id="Password"  placeholder="Password" >
-              </div>
-              <div class="pass-link"><a href="#">Forgot password?</a></div>
-              <div class="field btn">
-                <div class="btn-layer"></div>
-                <button type="button"  onclick="login(this)">Login</button>
-              </div>
-              <div class="signup-link">Not a member? <a href="">Signup now</a></div>
-            </form>
-            <form onsubmit="return false" class="signup">
-              <div class="field">
-            
-                <input type="text" id="FullName" placeholder="Full Name" >
-              </div>
-              <div class="field">
-            
-                <input type="text" id="SEmail" placeholder="Email Address" >
-              </div>
-              <div class="field">
-            
-                <input type="password" id="SPassword" placeholder="Password" >
-              </div>
-              <div class="field">
-                <label for="">Profile Image</label>
-                <input class="form-control" type="file" id="ProfileImage" placeholder="Confirm password" >
-              </div>
-              <div class="mt-4 field btn">
-                <div class="btn-layer"></div>
-                <button type="button" value="Signup" onclick="Signup(this)">Signup</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
 </body>
-<script type="module" src="../JSFile/login.js"></script>
+<script type="module" src="../js file/login.js"></script>
+
 </html>
