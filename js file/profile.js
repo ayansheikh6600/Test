@@ -8,12 +8,14 @@ import {
     signInWithEmailAndPassword,
     getDoc,
     signOut,
-    deleteObject ,
+    deleteObject,
     ref,
     uploadBytesResumable, getDownloadURL,
     getStorage,
     storage,
-    updateDoc
+    updateDoc,
+    getDocs,
+    collection
 } from "../firebase.js"
 
 
@@ -32,20 +34,20 @@ window.addEventListener("load", async function () {
 
         var datta = docSnap.data()
 
-    }else{
+    } else {
         console.log("No such document!");
     }
 
-        let FName = document.getElementById("FName")
-        let LName = document.getElementById("LName")
-        let UserEmail = document.getElementById("UserEmail")
-        let ProfileImage = document.getElementById("ProfileImage")
-        FName.value = datta.FirstName
-        LName.value = datta.LastName
-        UserEmail.value = datta.email
-        ProfileImage.src = datta.ProfileImageURL
+    let FName = document.getElementById("FName")
+    let LName = document.getElementById("LName")
+    let UserEmail = document.getElementById("UserEmail")
+    let ProfileImage = document.getElementById("ProfileImage")
+    FName.value = datta.FirstName
+    LName.value = datta.LastName
+    UserEmail.value = datta.email
+    ProfileImage.src = datta.ProfileImageURL
 
-    })
+})
 
 function logout() {
     // console.log(e.innerHTML)
@@ -83,18 +85,27 @@ async function SelectImage(e) {
 // console.log(UpdateImage.files[0])
 // }
 
-function updatage(e) {
+async function Test(e, postsData) {
+    console.log(e, "===", postsData)
+    const cityRef = doc(db, 'Posts', e);
+    await setDoc(cityRef, postsData);
+}
+
+async function updatage(e) {
     console.log(e.parentNode.children[0])
     const image = e.parentNode.children[0]
     const Updateimg = e.files[0]
     console.log(Updateimg)
     const UserData = JSON.parse(localStorage.getItem("user"))
     console.log(UserData)
+
+
+    // return console.log("AYan")
     const LoadingDiv = document.querySelector(".LoadingDiv")
     const lowOpacity = document.querySelector("#lowOpacity")
 
     lowOpacity.style.opacity = "30%"
-    
+
 
     LoadingDiv.style.display = "block"
 
@@ -141,7 +152,7 @@ function updatage(e) {
                     const docSnap = await getDoc(docRef);
 
                     if (docSnap.exists()) {
-                        console.log("Document data:", docSnap.data());
+                        // console.log("Document data:", docSnap.data());
 
                         const FirbaseUserDate = docSnap.data()
 
@@ -156,13 +167,47 @@ function updatage(e) {
                         UserData.ProfileImageURL = downloadURL
                         UserData.imageRef = Updateimg.name
 
-                        localStorage.setItem("user",JSON.stringify(UserData))
-                        LoadingDiv.style.display = "none"
-                        window.location.reload()
+                        const querySnapshot = await getDocs(collection(db, "Posts"));
+                        querySnapshot.forEach(async (doc) => {
+                            const postsData = doc.data()
+                            if (UserData.UID === postsData.UID) {
+                                // console.log(doc.id, " => ", postsData.Image = "ayan");
+                                const postId = doc.id
+                                postsData.Image = downloadURL
+                                // console.log(postsData)
+                                // console.log(postId)
+
+                               await Test(postId, postsData)
+                                // console.log("Ayan")
+
+                                // const cityRef = doc(db, 'Posts', postId);
+                                // await setDoc(cityRef, postsData);
 
 
 
-                        console.log("Ayan")
+                            }
+
+                            // doc.data() is never undefined for query doc snapshots
+
+                        });
+
+                        localStorage.setItem("user", JSON.stringify(UserData))
+                        
+                        function myFunction() {
+                          let  timeout = setTimeout(alertFunc, 3000);
+                          }
+
+                          myFunction()
+                          
+                          function alertFunc() {
+                            LoadingDiv.style.display = "none"
+                            window.location.reload()
+                          }
+                        await console.log("Ayan")
+
+
+
+                         
 
 
 
@@ -170,6 +215,8 @@ function updatage(e) {
                         // docSnap.data() will be undefined in this case
                         console.log("No such document!");
                     }
+
+                //    
                 });
             }
         );

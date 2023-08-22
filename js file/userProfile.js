@@ -42,14 +42,14 @@ window.addEventListener("load", async function () {
                 <img id="ProfilImage" class="ProfileImagTag" src="${BlogData.Image}" width="100px" height="100px" alt="">
             </div>
             <div class="">
-                <div><h3 id="BlogTitle">${BlogData.Title}</h3></div>
+                <div><h3 id="BlogTitle" class="wordBreak">${BlogData.Title}</h3></div>
                 <div>
                     <span id="UserName">${BlogData.FullName}</span> - <span id="BlogDate">${BlogData.timestamp.toDate()}</span>
                 </div>
             </div>
           </div>
           <div class="mt-3">
-            <p>${BlogData.Desc}</p>
+            <p class="wordBreak">${BlogData.Desc}</p>
           </div>
           </div>`
 

@@ -209,3 +209,8 @@ body{
 .lowOpacity{
     opacity: 30%;
 }
+.wordBreak{
+    /* width: 100% !important; */
+    /* border: 1px solid black; */
+    word-break: break-word;
+}
